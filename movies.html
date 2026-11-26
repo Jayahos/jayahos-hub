@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movies &amp; Series — hub.jayahos.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --surface: #131822;
+      --surface-hover: #1a2130;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #d4a373;
+      --accent-soft: rgba(212, 163, 115, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 28px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .brand { font-weight: 600; font-size: 1.05rem; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
+    .brand span { color: var(--accent); }
+    nav { display: flex; gap: 24px; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.92rem; transition: color 0.2s ease; }
+    nav a:hover, nav a.active { color: var(--text); font-weight: 500; }
+    .hero { padding: 64px 0 48px; }
+    .badge { display: inline-block; padding: 6px 14px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 0.82rem; font-weight: 500; margin-bottom: 18px; }
+    .hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; line-height: 1.2; margin-bottom: 16px; }
+    .hero p { font-size: 1.08rem; color: var(--muted); max-width: 680px; }
+    section { padding: 48px 0; border-top: 1px solid var(--border); }
+    .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+    .section-title { font-size: 1.55rem; font-weight: 600; margin-bottom: 20px; }
+    .highlight-card { background: var(--surface); border: 1px solid rgba(212, 163, 115, 0.35); border-radius: 14px; padding: 24px; }
+    .highlight-card h3 { font-size: 1.15rem; color: var(--text); margin-bottom: 6px; }
+    .highlight-card p { color: var(--muted); font-size: 0.95rem; }
+    .quote-box { background: var(--surface); border-left: 3px solid var(--accent); padding: 18px 22px; border-radius: 0 12px 12px 0; margin: 18px 0; color: var(--text); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; list-style: none; }
+    .pill-list li { background: var(--surface); border: 1px solid var(--border); padding: 8px 14px; border-radius: 10px; font-size: 0.92rem; color: var(--text); }
+    footer { padding: 40px 0 60px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted); font-size: 0.88rem; }
+    footer a { color: var(--text); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" class="brand">hub<span>.</span>jayahos.com</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="movies.html" class="active">Movies</a>
+        <a href="music.html">Music</a>
+        <a href="https://jayahos.com" target="_blank" rel="noopener">jayahos.com ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" style="border-top: none;">
+        <span class="badge">🎬 Movie Club</span>
+        <h1>चलचित्र र सिरिज</h1>
+        <p>मेरा मनपर्ने चलचित्र र सिरिज — अलिकति हृदयस्पर्शी, अलिकति प्रेरणादायक, अलिकति गहिरो।</p>
+      </section>
+
+      <section>
+        <div class="section-label">Currently Watching</div>
+        <h2 class="section-title">अहिले हेर्दै</h2>
+        <div class="highlight-card">
+          <h3>Like Water for Chocolate (Season 2) &amp; One Hundred Years of Solitude (Season 2)</h3>
+          <p>Like Water for Chocolate — Season 1 done, Season 2 Starts · One Hundred Years of Solitude — Second Season</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">Philosophy</div>
+        <h2 class="section-title">किन मन पर्छ?</h2>
+        <div class="quote-box">
+          Underdog कथा, वास्तविक घटनामा आधारित प्रेरणादायक चलचित्र, भावनात्मक गहिराइ र राम्रो कथा कथन मन पर्छ। Magical realism पनि अलिकति तान्दै छ।
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">Recent</div>
+        <h2 class="section-title">हालै हेरेका</h2>
+        <ul class="pill-list">
+          <li>The Silence of the Lambs</li>
+          <li>Bridge to Terabithia</li>
+          <li>12 Years a Slave</li>
+          <li>Unko Sweater</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-label">Cinema</div>
+        <h2 class="section-title">हेरेका केही चलचित्रहरू</h2>
+        <ul class="pill-list">
+          <li>CODA</li>
+          <li>Peanut Butter Falcon</li>
+          <li>I Want to Talk</li>
+          <li>3 Idiots</li>
+          <li>Temple Grandin</li>
+          <li>Good Will Hunting</li>
+          <li>The Imitation Game</li>
+          <li>Hidden Figures</li>
+          <li>Soul</li>
+          <li>Sound of Metal</li>
+          <li>Manchester by the Sea</li>
+          <li>Erin Brockovich</li>
+          <li>The Pursuit of Happyness</li>
+          <li>A Beautiful Mind</li>
+          <li>McFarland USA</li>
+          <li>Room</li>
+          <li>Perfect Days</li>
+          <li>Hunt for the Wilderpeople</li>
+          <li>Life of Pi</li>
+          <li>Barfi!</li>
+          <li>Benjamin Button</li>
+          <li>The Green Mile</li>
+          <li>Lion</li>
+          <li>Taare Zameen Par</li>
+          <li>Bhaag Milkha Bhaag</li>
+          <li>Mary Kom</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-label">Television</div>
+        <h2 class="section-title">सिरिजहरू</h2>
+        <ul class="pill-list">
+          <li>Ozark</li>
+          <li>Peaky Blinders</li>
+          <li>The Queen's Gambit</li>
+          <li>One Hundred Years of Solitude</li>
+          <li>Game of Thrones</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2026 Vijaya Acharya · <a href="index.html">← Back to Hub</a></div>
+      <div>Built with clarity &amp; purpose.</div>
+    </footer>
+  </div>
+</body>
+</html>
