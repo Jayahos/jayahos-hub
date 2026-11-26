@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books — hub.jayahos.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --surface: #131822;
+      --surface-hover: #1a2130;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #d4a373;
+      --accent-soft: rgba(212, 163, 115, 0.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+    header { padding: 28px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .brand { font-weight: 600; font-size: 1.05rem; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
+    .brand span { color: var(--accent); }
+    nav { display: flex; gap: 24px; }
+    nav a { color: var(--muted); text-decoration: none; font-size: 0.92rem; transition: color 0.2s ease; }
+    nav a:hover, nav a.active { color: var(--text); font-weight: 500; }
+    .hero { padding: 64px 0 48px; }
+    .badge { display: inline-block; padding: 6px 14px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 0.82rem; font-weight: 500; margin-bottom: 18px; }
+    .hero h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 600; line-height: 1.2; margin-bottom: 16px; }
+    .hero p { font-size: 1.08rem; color: var(--muted); max-width: 680px; }
+    section { padding: 48px 0; border-top: 1px solid var(--border); }
+    .section-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+    .section-title { font-size: 1.55rem; font-weight: 600; margin-bottom: 20px; }
+    .highlight-card { background: var(--surface); border: 1px solid rgba(212, 163, 115, 0.35); border-radius: 14px; padding: 24px; }
+    .highlight-card h3 { font-size: 1.25rem; color: var(--text); margin-bottom: 6px; }
+    .highlight-card p { color: var(--muted); font-size: 0.95rem; }
+    .quote-box { background: var(--surface); border-left: 3px solid var(--accent); padding: 18px 22px; border-radius: 0 12px 12px 0; margin: 18px 0; color: var(--text); }
+    .book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+    .book-item { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; font-size: 0.95rem; font-weight: 500; color: var(--text); transition: transform 0.2s ease, border-color 0.2s ease; }
+    .book-item:hover { transform: translateY(-2px); border-color: rgba(212, 163, 115, 0.35); }
+    .pill-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; list-style: none; }
+    .pill-list li { background: var(--surface); border: 1px solid var(--border); padding: 8px 14px; border-radius: 10px; font-size: 0.92rem; color: var(--text); }
+    footer { padding: 40px 0 60px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; color: var(--muted); font-size: 0.88rem; }
+    footer a { color: var(--text); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" class="brand">hub<span>.</span>jayahos.com</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="books.html" class="active">Books</a>
+        <a href="music.html">Music</a>
+        <a href="https://jayahos.com" target="_blank" rel="noopener">jayahos.com ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" style="border-top: none;">
+        <span class="badge">📚 Book Nook</span>
+        <h1>किताबहरू</h1>
+        <p>अलिकति यथार्थ, अलिकति दर्शन, अलिकति कथा।</p>
+      </section>
+
+      <section>
+        <div class="section-label">Currently Reading</div>
+        <h2 class="section-title">अहिले पढ्दै</h2>
+        <div class="highlight-card">
+          <h3>ऐँठन — विवेक ओझा</h3>
+          <p>मदन पुरस्कार विजेता कृति — यथार्थ र मानवीय संवेदनाको गहिरो कथा।</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">Philosophy</div>
+        <h2 class="section-title">किन पढ्छु?</h2>
+        <div class="quote-box">
+          मनलाई अलिकति गहिरो बनाउने, समाज र मान्छेलाई अलिकति नजिकबाट हेर्ने किताबहरू मन पर्छन् — आफूलाई upgrade गर्ने।
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">Completed</div>
+        <h2 class="section-title">पढिसकेका केही किताबहरू</h2>
+        <div class="book-grid">
+          <div class="book-item">ऐठन</div>
+          <div class="book-item">महारानी</div>
+          <div class="book-item">ईजोरीया</div>
+          <div class="book-item">अहिल्या</div>
+          <div class="book-item">जे ३३</div>
+          <div class="book-item">बाआमा</div>
+          <div class="book-item">अर्को देशमा</div>
+          <div class="book-item">सोताला</div>
+          <div class="book-item">यशोधरा</div>
+          <div class="book-item">एक्लो</div>
+          <div class="book-item">डम्फुको आत्मालाप</div>
+          <div class="book-item">जोगियाना</div>
+          <div class="book-item">चित्रलेखाको ८४</div>
+        </div>
+        <p style="color: var(--muted); font-size: 0.9rem; margin-top: 16px;">अझै धेरै छन्, यति नै अहिले।</p>
+      </section>
+
+      <section>
+        <div class="section-label">Reading List</div>
+        <h2 class="section-title">पढ्नुपर्ने किताबहरू</h2>
+        <p style="color: var(--muted); margin-bottom: 10px;">नेपाली र दक्षिण एसियाली:</p>
+        <ul class="pill-list">
+          <li>अद्वैत</li>
+          <li>मुकाम रणमैदान</li>
+          <li>बोरा</li>
+          <li>द्रौपदी</li>
+          <li>गौरी</li>
+          <li>समय त्रासदी</li>
+          <li>निर्वाण</li>
+          <li>तिन रोज ईश्क</li>
+          <li>पैताला</li>
+          <li>माधवी</li>
+        </ul>
+        <p style="color: var(--muted); margin-top: 24px; margin-bottom: 10px;">र केही विदेशी:</p>
+        <ul class="pill-list">
+          <li>कर्माजोभका दाजुभाइ (The Brothers Karamazov)</li>
+          <li>अपराध र सजाय (Crime and Punishment)</li>
+          <li>सिद्धार्थ (Siddhartha)</li>
+          <li>भोल्गा से गंगा</li>
+          <li>वयं रक्षामः</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2026 Vijaya Acharya · <a href="index.html">← Back to Hub</a></div>
+      <div>Built with clarity &amp; purpose.</div>
+    </footer>
+  </div>
+</body>
+</html>
