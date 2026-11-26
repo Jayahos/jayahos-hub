@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music — hub.jayahos.com</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0e14;
+      --surface: #131822;
+      --surface-hover: #1a2130;
+      --border: rgba(255, 255, 255, 0.08);
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #d4a373;
+      --accent-soft: rgba(212, 163, 115, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .brand {
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    .brand span {
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 64px 0 48px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 500;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 680px;
+    }
+
+    section {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 1.55rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .quote-box {
+      background: var(--surface);
+      border-left: 3px solid var(--accent);
+      padding: 18px 22px;
+      border-radius: 0 12px 12px 0;
+      margin: 22px 0;
+      font-style: italic;
+      color: var(--text);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+      list-style: none;
+    }
+
+    .pill-list li {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Songs Table */
+    .table-wrap {
+      overflow-x: auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.94rem;
+    }
+
+    th, td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: var(--surface-hover);
+    }
+
+    .song-num {
+      color: var(--muted);
+      font-weight: 500;
+      width: 44px;
+    }
+
+    .song-title {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .song-reason {
+      color: var(--muted);
+    }
+
+    /* Cards Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      margin-top: 16px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(212, 163, 115, 0.35);
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="index.html" class="brand">hub<span>.</span>jayahos.com</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="music.html" class="active">Music</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="https://jayahos.com" target="_blank" rel="noopener">jayahos.com ↗</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" style="border-top: none;">
+        <span class="badge">🎸 Personal Soundscape</span>
+        <h1>Dark Country &amp; Southern Gothic</h1>
+        <p>
+          जहाँ संगीत केवल मनोरञ्जन होइन — एउटा वातावरण, एउटा कथा, र मानवीय आत्माको कच्चा आवाज हो।
+        </p>
+      </section>
+
+      <section>
+        <div class="section-label">Philosophy</div>
+        <h2 class="section-title">Why This Sound?</h2>
+        <p style="color: var(--muted);">
+          मलाई polished pop hype भन्दा raw vocal, acoustic र electric गितारको गहिरो echo, र environmental sound भएको संगीत मन पर्छ। Dark Country र Southern Gothic मा जीवनको उज्यालो मात्र होइन, अँध्यारो, धुलो, र संघर्ष पनि उत्तिकै इमानदारीका साथ आउँछ।
+        </p>
+        <div class="quote-box">
+          “आवाज राम्रो भए पुग्दैन, music राम्रो भए पुग्दैन — दुवै एकसाथ soul hit गर्नुपर्छ।”
+        </div>
+        <ul class="pill-list">
+          <li>Gritty र authentic आवाज</li>
+          <li>Raw, organic production</li>
+          <li>Strong rhythm र cinematic depth</li>
+          <li>Environmental sound (real place जस्तो)</li>
+          <li>Powerful storytelling</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-label">Curated List</div>
+        <h2 class="section-title">Top Songs — Dark Country &amp; Southern Gothic</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Artist</th>
+                <th>Song</th>
+                <th>किन मन पर्छ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="song-num">1</td><td>KALEO</td><td class="song-title">Way Down We Go</td><td class="song-reason">Raw, cinematic, Iceland को landscape जस्तो feel</td></tr>
+              <tr><td class="song-num">2</td><td>The SteelDrivers</td><td class="song-title">Ghosts of Mississippi</td><td class="song-reason">Southern Gothic को आत्मा, bluegrass र blues को मेल</td></tr>
+              <tr><td class="song-num">3</td><td>Blues Saraceno</td><td class="song-title">The River</td><td class="song-reason">Dusty road, open space, pure delta blues</td></tr>
+              <tr><td class="song-num">4</td><td>The Dead South</td><td class="song-title">In Hell I'll Be in Good Company</td><td class="song-reason">Dark bluegrass, playful तर गहिरो</td></tr>
+              <tr><td class="song-num">5</td><td>The Dead South</td><td class="song-title">Banjo Odyssey</td><td class="song-reason">Instrumental मा पनि कथा बोल्ने क्षमता</td></tr>
+              <tr><td class="song-num">6</td><td>Shawn James</td><td class="song-title">Through the Valley</td><td class="song-reason">Dark folk, जंगल र अँध्यारो room को feel</td></tr>
+              <tr><td class="song-num">7</td><td>Welshly Arms</td><td class="song-title">Legendary</td><td class="song-reason">Anthemic, soulful, powerful build-up</td></tr>
+              <tr><td class="song-num">8</td><td>Barns Courtney</td><td class="song-title">Glitter &amp; Gold</td><td class="song-reason">Blues rock मा cinematic depth</td></tr>
+              <tr><td class="song-num">9</td><td>Bishop Briggs</td><td class="song-title">The River</td><td class="song-reason">Dark cinematic, emotional intensity</td></tr>
+              <tr><td class="song-num">10</td><td>Rag'n'Bone Man</td><td class="song-title">Human</td><td class="song-reason">Gritty blues soul, honest vocal</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">Roots &amp; Emotion</div>
+        <h2 class="section-title">South Asian Favorites</h2>
+        <p style="color: var(--muted); margin-bottom: 18px;">
+          Dark Country सँगै मलाई नेपाली र हिन्दी संगीत पनि उत्तिकै मन पर्छ — विशेषगरी जसले भावना र आवाजको गहिराइ बोक्छ।
+        </p>
+        <div class="grid">
+          <div class="card">
+            <h3>Satya / Sworup</h3>
+            <p>नेपाली संगीतको soulful आवाज र storytelling</p>
+          </div>
+          <div class="card">
+            <h3>Arijit Singh</h3>
+            <p>भावनात्मक depth र pure vocal expression</p>
+          </div>
+          <div class="card">
+            <h3>Hindi &amp; Nepali Ghazal</h3>
+            <p>शान्त, गहिरो, र काव्यात्मक संगीत</p>
+          </div>
+        </div>
+        <ul class="pill-list" style="margin-top: 22px;">
+          <li>आवाजको इमानदारी</li>
+          <li>भावनात्मक storytelling</li>
+          <li>Acoustic र soft production</li>
+          <li>रातको शान्त वातावरणमा सुहाउने sound</li>
+        </ul>
+      </section>
+
+      <section>
+        <div class="section-label">Collections</div>
+        <h2 class="section-title">Playlists</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Dark &amp; Gritty</h3>
+            <p>Dark Country &amp; Southern Gothic</p>
+          </div>
+          <div class="card">
+            <h3>Nepali Soul</h3>
+            <p>Satya, Sworup र अन्य नेपाली favorites</p>
+          </div>
+          <div class="card">
+            <h3>Arijit &amp; Emotions</h3>
+            <p>Selected Arijit Singh songs</p>
+          </div>
+          <div class="card">
+            <h3>Ghazal Evenings</h3>
+            <p>Hindi र Nepali ghazals</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2026 Vijaya Acharya · <a href="index.html">← Back to Hub</a></div>
+      <div>Built with clarity &amp; purpose.</div>
+    </footer>
+  </div>
+</body>
+</html>
